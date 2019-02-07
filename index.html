@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Color Palette Generator</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="public/images/color-wheel.png"
+      type="image/png"
+    />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="public/css/bootstrap.min.css" />
+    <!-- Roboto Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+    />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="public/css/animate.css" />
+    <!-- Pace CSS -->
+    <link rel="stylesheet" href="public/css/pace.css" />
+    <!-- My Custom CSS -->
+    <link rel="stylesheet" href="public/css/style.css" />
+  </head>
+  <body>
+    <div class="container py-4">
+      <h1 class="text-center text-success mb-5">
+        A simple JS <span class="text-info">color palette</span> generator app
+      </h1>
+      <div class="row">
+        <!-- First Col -->
+        <div class="col-sm-4 text-center">
+          <p class="text-secondary">
+            Please kindly wait until the image is fully loaded.
+          </p>
+          <div id="imageContainer">
+            <img
+              src="https://source.unsplash.com/random"
+              class="mb-2 img-thumbnail rounded"
+              id="image"
+              alt="Unsplash Image"
+              title="Unsplash Image"
+              crossorigin="Anonymous"
+            />
+            <p>
+              Images are provided by unsplash
+              <a
+                href="https://source.unsplash.com/"
+                class="text-info"
+                target="_blank"
+                title="Unsplash"
+                rel="noreferrer"
+                >API</a
+              >
+            </p>
+            <button class="btn" id="pickBtn" title="Click to pick color">
+              Click
+            </button>
+          </div>
+        </div>
+        <!-- Second Col -->
+        <div class="col-sm-8 text-center">
+          <h2>Picked colors</h2>
+          <small class="instruction mb-3 font-weight-bold text-info"
+            >Click on any box to copy its color</small
+          >
+          <!-- Colored divs wrapper -->
+          <div id="wrapper"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="public/js/color-thief.min.js"></script>
+    <script
+      data-pace-options='{ "ajax": false }'
+      src="public/js/pace.min.js"
+    ></script>
+    <script src="public/js/app.js"></script>
+  </body>
+</html>
