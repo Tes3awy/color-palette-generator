@@ -1,9 +1,6 @@
-html {
-  font-family: 'Roboto', sans-serif;
-}
-
-body{
-   box-sizing: border-box;
+body {
+  font-family: 'Roboto', sans-serif !important;
+  box-sizing: border-box;
 }
 
 .instruction {
@@ -32,6 +29,7 @@ body{
 #wrapper {
   position: relative;
   top: 25%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,4 +61,13 @@ body{
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   font-size: 22px;
+}
+
+.spinner-container {
+  height: 100vh;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
 }

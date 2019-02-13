@@ -1,5 +1,12 @@
+document.querySelector('main').style.display = 'none';
+document.querySelector('.spinner-border').style.display = 'block';
 window.onload = function() {
   pickBtn.style.display = 'block';
+  setTimeout(function() {
+    document.querySelector('.spinner-border').style.display = 'none';
+    document.querySelector('.spinner-container').style.height = '0';
+    document.querySelector('main').style.display = 'block';
+  }, 1000);
 };
 
 var pickBtn = document.querySelector('#pickBtn');
@@ -34,14 +41,11 @@ function extractPalette() {
     document.querySelector('#wrapper').appendChild(newElement);
     document.querySelector('#wrapper').classList.add('animated', 'tada');
 
-    if (isLightOrDark(hexColor) > 128) {
-      newElement.innerHTML =
-        '<span class="colorHex text-black">' + hexColor + '</span>';
-    } else {
-      newElement.innerHTML =
-        '<span class="colorHex text-white">' + hexColor + '</span>';
-    }
-
+    isLightOrDark(hexColor) >= 128
+      ? (newElement.innerHTML =
+          '<span class="colorHex text-black">' + hexColor + '</span>')
+      : (newElement.innerHTML =
+          '<span class="colorHex text-white">' + hexColor + '</span>');
     document.querySelector('.instruction').style.display = 'block';
   });
 }
@@ -50,7 +54,7 @@ function isLightOrDark(hexColor) {
   var r = parseInt(hexColor.substr(1, 2), 16);
   var g = parseInt(hexColor.substr(3, 2), 16);
   var b = parseInt(hexColor.substr(4, 2), 16);
-  var luminance = r * 0.2126 + g * 0.7152 + b * 0.0722;
+  var luminance = (r * 299 + g * 587 + b * 114) / 1000;
   return luminance;
 }
 
