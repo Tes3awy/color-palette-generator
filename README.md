@@ -19,4 +19,4 @@ Start your project by running `npm install` or `yarn install` followed by `npm s
 
 ### Preview
 
-![Preview](public/images/preview.jpg).
+![Preview](public/images/preview.jpg)
