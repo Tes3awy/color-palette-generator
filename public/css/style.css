@@ -1,10 +1,13 @@
 body {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  position: relative;
+  height: 100vh;
 }
 
 .instruction {
-  display: none;
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 
 #image {
@@ -12,62 +15,58 @@ body {
   height: 100%;
 }
 
+#wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 .previewColor {
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 5px;
-  cursor: crosshair;
+  width: 140px;
+  height: 80px;
+  margin: 2px;
   border: 2px solid #000;
+  flex: 1 1 19%;
 }
 
-.previewColor:last-child {
-  margin: 0;
-}
-
-#wrapper {
-  position: relative;
-  top: 25%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.colorHex {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
+.previewColor > span {
+  cursor: pointer;
 }
 
 #imageContainer {
   position: relative;
 }
 
-#pickBtn {
+#generateBtn {
   display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 3px solid #20b2aa;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-size: 22px;
 }
 
 .spinner-container {
-  height: 100vh;
+  height: 30vh;
+  display: flex;
 }
 
-.spinner-border {
-  width: 3rem;
-  height: 3rem;
+.spinner-grow {
+  width: 2rem;
+  height: 2rem;
+}
+
+.toast {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

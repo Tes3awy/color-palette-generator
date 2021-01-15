@@ -1,0 +1,23 @@
+{
+  "name": "color-palette-generator",
+  "version": "1.0.0",
+  "description": "Color Palette Generator",
+  "main": "app.min.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tes3awy/color-palette-generator.git"
+  },
+  "author": "Osama Abbas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tes3awy/color-palette-generator/issues"
+  },
+  "homepage": "https://github.com/Tes3awy/color-palette-generator#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2"
+  }
+}

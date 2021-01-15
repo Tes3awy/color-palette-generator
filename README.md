@@ -1,7 +1,22 @@
 # Simple Color Palette Generator using Vanilla JavaScript
 
-Make sure to open the project on local server for it to work properly.
+> **The formulation is based on the [HSP Color Model](http://alienryderflex.com/hsp.html).**
 
-The `.htaccess` file only purpose is to allow fetching the resources from [Unsplash](https://source.unsplash.com/) API.
+## Index
 
-![How it Works](public/images/jumbotron.gif)
+1. [Getting Started](#how-to-start)
+2. [Preview](#preview)
+
+---
+
+### Getting Started
+
+> This app is using [Color Theif](//lokeshdhakar.com/projects/color-thief/).
+
+Start your project by running `npm install` or `yarn install` followed by `npm start` or `yarn start`.
+
+---
+
+### Preview
+
+![Preview](public/images/preview.jpg).
