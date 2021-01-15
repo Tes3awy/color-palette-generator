@@ -1,12 +1,17 @@
 var spinnerContainer = document.querySelector('.spinner-container');
 spinnerContainer.style.display = 'block';
 
-var generateBtn = document.querySelector('#generateBtn');
-
 var theImage = document.querySelector('#image');
 theImage.style.display = 'none';
 
+var generateBtn = document.querySelector('#generateBtn');
 $('#generateBtn').tooltip();
+
+var refreshBtn = document.querySelector('#refreshBtn');
+refreshBtn.addEventListener('click', function () {
+  location.reload();
+  return false;
+});
 
 window.onload = function () {
   generateBtn.style.display = 'block';

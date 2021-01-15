@@ -5,7 +5,7 @@
 ## Index
 
 1. [Getting Started](#getting-started)
-2. [Preview](#preview)
+2. [Live Preview](https://tes3awy.github.io/color-palette-generator/)
 
 ---
 
@@ -14,9 +14,3 @@
 > This app is using [Color Theif](//lokeshdhakar.com/projects/color-thief/).
 
 Start your project by running `npm install` or `yarn install` followed by `npm start` or `yarn start`.
-
----
-
-### Preview
-
-![Preview](public/images/preview.jpg)
