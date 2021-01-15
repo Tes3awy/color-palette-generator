@@ -4,7 +4,7 @@
 
 ## Index
 
-1. [Getting Started](#how-to-start)
+1. [Getting Started](#getting-started)
 2. [Preview](#preview)
 
 ---
