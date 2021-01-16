@@ -1,8 +1,8 @@
 var spinnerContainer = document.querySelector('.spinner-container');
-spinnerContainer.style.display = 'block';
+spinnerContainer.classList.add('d-block');
 
 var theImage = document.querySelector('#image');
-theImage.style.display = 'none';
+theImage.classList.add('d-none');
 
 var generateBtn = document.querySelector('#generateBtn');
 $('#generateBtn').tooltip();
@@ -14,12 +14,13 @@ refreshBtn.addEventListener('click', function () {
 });
 
 window.onload = function () {
-  generateBtn.style.display = 'block';
-  spinnerContainer.style.display = 'none';
+  generateBtn.classList.remove('d-none');
+  generateBtn.classList.add('d-block');
+  spinnerContainer.classList.add('d-none');
+  spinnerContainer.classList.add('invisible');
   spinnerContainer.style.height = '0';
-  spinnerContainer.style.visibility = 'hidden';
   spinnerContainer.style.opacity = '0';
-  theImage.style.display = 'block';
+  theImage.classList.add('d-block');
 };
 
 generateBtn.addEventListener('click', function () {
@@ -33,8 +34,8 @@ generateBtn.addEventListener('click', function () {
 function extractColorPalette() {
   var colorThief = new ColorThief();
   var colorsToExtract = 20; // Change colorsToExtract to any number to get the number of colors you need. (maximum is 20)
-  var colors = colorThief.getPalette(theImage, colorsToExtract);
-  colors.forEach(function (color) {
+  var palette = colorThief.getPalette(theImage, colorsToExtract);
+  palette.forEach(function (color) {
     var r = color[0];
     var g = color[1];
     var b = color[2];
@@ -49,27 +50,26 @@ function extractColorPalette() {
     hexB.length < 2 ? (hexB = hexB.padStart(2, '0')) : hexB;
     var hexColor = '#' + hexR + hexG + hexB;
 
-    // Create a div to preview the colors
-    var newElement = document.createElement('div');
-    newElement.className =
-      'd-flex flex-wrap justify-content-center align-items-center swatch';
-    newElement.style.backgroundColor = rgbColor;
-    var wrapperDiv = document.querySelector('#swatches');
-    wrapperDiv.appendChild(newElement);
-    wrapperDiv.classList.add('animated', 'pulse');
+    // Create a div to preview each color of the palette
+    var swatch = document.createElement('div');
+    swatch.className =
+      'swatch d-inline-flex flex-wrap align-items-center shadow-sm animated pulse';
+    swatch.style.backgroundColor = rgbColor;
+    var swatches = document.querySelector('#swatches');
+    swatches.appendChild(swatch);
 
     // Checking if the color is light or dark
     isLightOrDark(r, b, g) >= 127.5
-      ? (newElement.innerHTML =
-          '<span class="rgbColor color d-block w-100 text-black">' +
+      ? (swatch.innerHTML =
+          '<span class="rgbColor color d-block w-100 text-black" title="RGB Color">' +
           rgbColor +
-          '</span> <span class="hexColor color d-block w-100 text-black">' +
+          '</span> <span class="hexColor color d-block w-100 text-black" title="HEX Color">' +
           hexColor +
           '</span>')
-      : (newElement.innerHTML =
-          '<span class="rgbColor color d-block w-100 text-white">' +
+      : (swatch.innerHTML =
+          '<span class="rgbColor color d-block w-100 text-white" title="RGB Color">' +
           rgbColor +
-          '</span> <span class="hexColor color d-block w-100 text-white">' +
+          '</span> <span class="hexColor color d-block w-100 text-white" title="HEX Color">' +
           hexColor +
           '</span>');
     document.querySelector('.instruction').style.opacity = '1';
@@ -78,7 +78,11 @@ function extractColorPalette() {
 
 // Check if color is light or dark function
 function isLightOrDark(r, g, b) {
-  return Math.round(Math.sqrt(r * r * 0.299 + g * g * 0.587 + b * b * 0.114));
+  return Math.round(
+    Math.sqrt(
+      Math.pow(r, 2) * 0.299 + Math.pow(g, 2) * 0.587 + Math.pow(b, 2) * 0.114
+    )
+  );
 }
 
 // Copy color to clipboard
@@ -105,5 +109,5 @@ function copyToClipboard() {
 function fadeOut(el) {
   el.style.WebkitTransition = 'visibility .6s, opacity .6s';
   el.style.opacity = '0';
-  el.style.visibility = 'hidden';
+  el.classList.add('invisible');
 }
