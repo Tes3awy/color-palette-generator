@@ -2,7 +2,7 @@
   "name": "color-palette-generator",
   "version": "1.0.0",
   "description": "Color Palette Generator",
-  "main": "app.min.js",
+  "main": "app.js",
   "scripts": {
     "start": "gulp"
   },
