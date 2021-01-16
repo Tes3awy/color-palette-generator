@@ -40,9 +40,9 @@ function extractColorPalette() {
     var b = color[2];
     var rgbColor = 'rgb(' + r + ',' + g + ',' + b + ')';
     // Convert R G B channels to hex codes
-    var hexR = Number(r).toString(16).toUpperCase();
-    var hexG = Number(g).toString(16).toUpperCase();
-    var hexB = Number(b).toString(16).toUpperCase();
+    var hexR = r.toString(16).toUpperCase();
+    var hexG = g.toString(16).toUpperCase();
+    var hexB = b.toString(16).toUpperCase();
     // Checking if a hex code length is less than 2 and add a 0
     hexR.length < 2 ? (hexR = hexR.padStart(2, '0')) : hexR;
     hexG.length < 2 ? (hexG = hexG.padStart(2, '0')) : hexG;
