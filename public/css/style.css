@@ -15,14 +15,13 @@ body {
   height: 100%;
 }
 
-#wrapper {
-  position: relative;
+#swatches {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-.previewColor {
+.swatch {
   position: relative;
   display: inline-block;
   width: 140px;
@@ -32,7 +31,7 @@ body {
   flex: 1 1 19%;
 }
 
-.previewColor > span {
+.swatch > span {
   cursor: pointer;
 }
 

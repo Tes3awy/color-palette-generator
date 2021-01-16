@@ -52,9 +52,9 @@ function extractColorPalette() {
     // Create a div to preview the colors
     var newElement = document.createElement('div');
     newElement.className =
-      'd-flex flex-wrap justify-content-center align-items-center previewColor';
+      'd-flex flex-wrap justify-content-center align-items-center swatch';
     newElement.style.backgroundColor = rgbColor;
-    var wrapperDiv = document.querySelector('#wrapper');
+    var wrapperDiv = document.querySelector('#swatches');
     wrapperDiv.appendChild(newElement);
     wrapperDiv.classList.add('animated', 'pulse');
 
