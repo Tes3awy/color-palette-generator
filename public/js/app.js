@@ -1,13 +1,13 @@
 var spinnerContainer = document.querySelector('.spinner-container');
 spinnerContainer.classList.add('d-block');
 
-var theImage = document.querySelector('#image');
-theImage.classList.add('d-none');
+var theImage = document.getElementById('image');
+theImage.classList.add('invisible');
 
-var generateBtn = document.querySelector('#generateBtn');
-$('#generateBtn').tooltip();
+var generateBtn = document.getElementById('generateBtn');
+var tooltip = new bootstrap.Tooltip(generateBtn)
 
-var refreshBtn = document.querySelector('#refreshBtn');
+var refreshBtn = document.getElementById('refreshBtn');
 refreshBtn.addEventListener('click', function () {
   location.reload();
   return false;
@@ -20,20 +20,20 @@ window.onload = function () {
   spinnerContainer.classList.add('invisible');
   spinnerContainer.style.height = '0';
   spinnerContainer.style.opacity = '0';
-  theImage.classList.add('d-block');
+  theImage.classList.remove('invisible');
 };
 
 generateBtn.addEventListener('click', function () {
   fadeOut(this);
   extractColorPalette();
-  $('#generateBtn').tooltip('dispose');
+  tooltip.dispose();
   copyToClipboard();
 });
 
 // Extract color palette from image
 function extractColorPalette() {
   var colorThief = new ColorThief();
-  var colorsToExtract = 20; // Change colorsToExtract to any number to get the number of colors you need. (maximum is 20)
+  var colorsToExtract = 16; // Change to any number between 2 and 20
   var palette = colorThief.getPalette(theImage, colorsToExtract);
   palette.forEach(function (color) {
     var r = color[0];
@@ -53,7 +53,7 @@ function extractColorPalette() {
     // Create a div to preview each color of the palette
     var swatch = document.createElement('div');
     swatch.className =
-      'swatch d-inline-flex flex-wrap align-items-center shadow-sm animated pulse';
+      'swatch d-inline-flex flex-wrap align-content-center shadow-sm animated pulse';
     swatch.style.backgroundColor = rgbColor;
     var swatches = document.querySelector('#swatches');
     swatches.appendChild(swatch);
@@ -99,8 +99,9 @@ function copyToClipboard() {
       document.body.removeChild(aux);
       document.querySelector('.toast-text').textContent =
         selectedColor + ' is copied to your clipboard';
-      var toast = $('.toast');
-      toast.toast('show');
+      var toastTrigger = document.querySelector('.toast');
+      var toast = new bootstrap.Toast(toastTrigger);
+      toast.show();
     });
   });
 }
