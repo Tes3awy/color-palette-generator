@@ -2,7 +2,7 @@
 
 > **The formulation is based on the [HSP Color Model](http://alienryderflex.com/hsp.html).**
 
-## Index
+## Table of Contents
 
 1. [Live Preview](https://tes3awy.github.io/color-palette-generator/)
 2. [Getting Started](#getting-started)
@@ -25,21 +25,20 @@ Run `yarn install` followed by `yarn start`.
 
 ### Libraries
 
-- Dependencies
+#### Dependencies
 
-  1. [Color Thief v2.3.2](https://lokeshdhakar.com/projects/color-thief/)
-  2. [Bootstrap v4.5.3](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
-  3. [Animate.css v3.7.2](https://github.com/animate-css/animate.css/tree/3.7.2)
+1. [Color Thief v2.3.2](https://lokeshdhakar.com/projects/color-thief/)
+2. [Bootstrap v5.1.3](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+3. [Animate.css v3.7.2](https://github.com/animate-css/animate.css/tree/3.7.2)
 
-- DevDependencies
+#### DevDependencies
 
-  1. [Gulp v4.0.2](https://gulpjs.com/)
-  2. [BrowserSync v2.26.13](https://browsersync.io/)
+1. [Gulp v4.0.2](https://gulpjs.com/)
+2. [BrowserSync v2.27.7](https://browsersync.io/)
 
 ---
 
 ### TODO
 
-- [ ] Update Bootstrap to v5.0.0-beta1
-
+- [x] Update Bootstrap to v5.1.3
 - [ ] Update Animate.css to v4.1.1
