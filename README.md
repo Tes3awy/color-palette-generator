@@ -28,17 +28,17 @@ Run `yarn install` followed by `yarn start`.
 #### Dependencies
 
 1. [Color Thief v2.3.2](https://lokeshdhakar.com/projects/color-thief/)
-2. [Bootstrap v5.1.3](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+2. [Bootstrap v5.2](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 3. [Animate.css v3.7.2](https://github.com/animate-css/animate.css/tree/3.7.2)
 
 #### DevDependencies
 
 1. [Gulp v4.0.2](https://gulpjs.com/)
-2. [BrowserSync v2.27.7](https://browsersync.io/)
+2. [BrowserSync v2.27.10](https://browsersync.io/)
 
 ---
 
 ### TODO
 
-- [x] Update Bootstrap to v5.1.3
-- [ ] Update Animate.css to v4.1.1
+- [x] Update Bootstrap to v5.2
+- [ ] ~~Update Animate.css to v4.1.1~~
